@@ -230,12 +230,12 @@ function CodexArcanum.INIT.TagAPI()
     -------------------------------------
     local TESTHELPER_unlocks = false and not _RELEASE_MODE
     -------------------------------------
-    if not NFS.getInfo(G.SETTINGS.profile .. '') then
-        NFS.createDirectory(G.SETTINGS.profile ..
+    if not love.filesystem.getInfo(G.SETTINGS.profile .. '') then
+        love.filesystem.createDirectory(G.SETTINGS.profile ..
             '')
     end
-    if not NFS.getInfo(G.SETTINGS.profile .. '/' .. 'meta.jkr') then
-        NFS.append(
+    if not love.filesystem.getInfo(G.SETTINGS.profile .. '/' .. 'meta.jkr') then
+        love.filesystem.append(
             G.SETTINGS.profile .. '/' .. 'meta.jkr', 'return {}')
     end
 
