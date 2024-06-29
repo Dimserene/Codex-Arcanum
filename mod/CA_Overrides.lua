@@ -190,7 +190,7 @@ end
 
 local generate_card_uiref = generate_card_ui
 function generate_card_ui(_c, full_UI_table, specific_vars, card_type, badges, hide_desc, main_start, main_end)
-  if _c.set == "Alchemical" or (_c.set == 'Booster' and _c.name:find("Alchemy")) or _c.name == 'Shock Humor' then
+  if _c.set == "Alchemical" or (_c.set == 'Booster' and (_c.name and _c.name:find("Alchemy"))) or _c.name == 'Shock Humor' then
     local first_pass = nil
     if not full_UI_table then 
         first_pass = true
